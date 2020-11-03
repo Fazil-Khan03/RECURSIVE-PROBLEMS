@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int LastIndex(int arr[],int idx,int n,int data)
+{
+	
+	if(idx==n)
+	  return -1;
+	
+	int Last = LastIndex(arr,idx+1,n,data);
+	if(Last==-1)
+	 {
+	 	
+	 	if(arr[idx]==data)
+	 	  return idx;
+	 	else
+		   return -1;  
+	 	
+	 }
+	else
+	 return Last;
+	 
+	
+	
+}
+int main()
+{
+
+int arr[]={1,2,3,4,5,7,8,9,4};
+
+
+cout<<LastIndex(arr,0,9,4);
+
+
+
+	return 0;
+}
