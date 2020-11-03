@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+vector<string> getCode(string str,vector<string> data)
+{
+	
+	if(str.length()==0)
+	 {
+	 	vector<string> res;
+	 	res.push_back("");
+	 	return res;
+	 	
+	 }
+	
+
+char ch = str[0];
+string rest = str.substr(1);
+vector<string> result = getCode(rest,data);
+
+vector<string> final;
+int ch_index = ch - '0';
+
+string num = data[ch_index];
+
+
+for(int i=0;i<num.length();i++)
+{
+
+	char xc = num[i];
+	
+	for(int i=0;i<result.size();i++)
+	{
+	
+	 	 final.push_back(result[i]+xc);
+	 	
+	 }
+	
+	
+	
+	
+}
+return final;	
+}
+
+
+
+int main()
+{
+
+
+vector<string> data;
+data.push_back(".");
+data.push_back("abc");
+data.push_back("def");
+data.push_back("ghi");
+data.push_back("jkl");
+data.push_back("mno");
+data.push_back("pqrs");
+data.push_back("tuv");
+data.push_back("wx");
+data.push_back("yz");
+
+
+
+vector<string> res = getCode("123",data);
+
+for(int i=0;i<res.size();i++)
+  cout<<res[i]<<" ";
+  
+
+
+
+	return 0;
+}
