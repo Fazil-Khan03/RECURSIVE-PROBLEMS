@@ -1,0 +1,23 @@
+//fazil_khan_prime
+#include<bits/stdc++.h>
+using namespace std;
+int FirstIndex(int arr[],int idx,int n,int data)
+{
+	if(idx==n)
+	  return -1;
+	
+	if(arr[idx]==data)
+	 return idx;
+	else
+	  return FirstIndex(arr,idx+1,n,data);
+
+}
+
+int main()
+{
+	int arr[]={2,6,8,7,82,7,5,8,2};
+	cout<<FirstIndex(arr,0,9,100);
+	
+	
+}
+
